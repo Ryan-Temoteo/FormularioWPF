@@ -8,8 +8,9 @@
     Title="MainWindow"
     Width="800"
     Height="550"
+    Loaded="Window_Loaded"
     Style="{StaticResource PropriedadesTela}"
-    mc:Ignorable="d" Loaded="Window_Loaded">
+    mc:Ignorable="d">
     <Grid Margin="10">
 
         <!--  Separando o formulário em duas linhas  -->
@@ -35,7 +36,7 @@
                     FontSize="12"
                     FontWeight="Medium"
                     Foreground="White" />
-                <Border Height="20">
+                <Border Height="20" Margin="5">
                     <TextBox
                         x:Name="txtNome"
                         HorizontalContentAlignment="Left"
@@ -51,7 +52,7 @@
                     FontSize="12"
                     FontWeight="Medium"
                     Foreground="White" />
-                <Border Height="20">
+                <Border Height="20" Margin="5">
                     <TextBox
                         x:Name="txtRua"
                         HorizontalContentAlignment="Left"
@@ -67,7 +68,7 @@
                     FontSize="12"
                     FontWeight="Medium"
                     Foreground="White" />
-                <Border Height="20">
+                <Border Height="20" Margin="5">
                     <TextBox
                         x:Name="txtCidade"
                         HorizontalContentAlignment="Left"
@@ -85,6 +86,7 @@
                     Foreground="White" />
                 <Border
                     Height="20"
+                    Margin="5"
                     Background="White"
                     CornerRadius="8">
                     <ComboBox x:Name="cmbEstado" Style="{StaticResource ComboArredondado}" />
@@ -110,10 +112,10 @@
             <Border>
                 <DataGrid
                     x:Name="dgEndereco"
-                    SelectionChanged="dgEndereco_SelectionChanged"
                     AutoGenerateColumns="False"
                     GridLinesVisibility="Horizontal"
                     IsReadOnly="True"
+                    SelectionChanged="dgEndereco_SelectionChanged"
                     Style="{StaticResource dgRedondo}">
                     <DataGrid.Columns>
                         <DataGridTextColumn
@@ -151,24 +153,27 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
-                <StackPanel Orientation="Vertical">
-                    <Border Height="40" Margin="50,20,50,0">
+                <Border Width="100" VerticalAlignment="Center">
+                    <StackPanel Orientation="Vertical">
                         <Button
                             x:Name="btnGravar"
+                            Click="btnGravar_Click"
                             Content="Gravar"
-                            Style="{StaticResource BtnChamado}" Click="btnGravar_Click" />
-                    </Border>
-                </StackPanel>
+                            Style="{StaticResource BtnChamado}" />
+                    </StackPanel>
+                </Border>
             </Grid>
             <Grid Grid.Column="1">
-                <StackPanel Orientation="Vertical">
-                    <Border Height="40" Margin="50,20,50,0">
+                <Border Width="100" VerticalAlignment="Center">
+                    <StackPanel Orientation="Vertical">
                         <Button
                             x:Name="btnExcluir"
+                            Click="btnExcluir_Click"
                             Content="Excluir"
-                            Style="{StaticResource BtnChamado}" Click="btnExcluir_Click" />
-                    </Border>
-                </StackPanel>
+                            Style="{StaticResource BtnChamado}" />
+                    </StackPanel>
+                </Border>
+
             </Grid>
         </Grid>
     </Grid>
