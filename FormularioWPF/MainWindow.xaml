@@ -15,9 +15,9 @@
 
         <!--  Separando o formulário em duas linhas  -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
+            <RowDefinition Height="100" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="80" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -30,31 +30,39 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
-                <Label
-                    Content="Nome:"
-                    FontFamily="Roboto"
-                    FontSize="12"
-                    FontWeight="Medium"
-                    Foreground="White" />
-                <Border Height="20" Margin="5">
-                    <TextBox
-                        x:Name="txtNome"
-                        HorizontalContentAlignment="Left"
-                        VerticalContentAlignment="Center"
-                        CharacterCasing="Upper"
-                        Style="{StaticResource TextArredondado}" />
+                <Border Margin="5" VerticalAlignment="Top">
+                    <Label
+                        Content="Nome:"
+                        FontFamily="Roboto"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        Foreground="White" />
+                </Border>
+                <Border Margin="5,0,5,0" VerticalAlignment="Center">
+                    <StackPanel Orientation="Vertical">
+                        <TextBox
+                            x:Name="txtNome"
+                            Height="25"
+                            HorizontalContentAlignment="Left"
+                            VerticalContentAlignment="Center"
+                            CharacterCasing="Upper"
+                            Style="{StaticResource TextArredondado}" />
+                    </StackPanel>
                 </Border>
             </Grid>
             <Grid Grid.Column="1">
-                <Label
-                    Content="Rua:"
-                    FontFamily="Roboto"
-                    FontSize="12"
-                    FontWeight="Medium"
-                    Foreground="White" />
-                <Border Height="20" Margin="5">
+                <Border Margin="5" VerticalAlignment="Top">
+                    <Label
+                        Content="Rua:"
+                        FontFamily="Roboto"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        Foreground="White" />
+                </Border>
+                <Border Margin="5,0,5,0" VerticalAlignment="Center">
                     <TextBox
                         x:Name="txtRua"
+                        Height="25"
                         HorizontalContentAlignment="Left"
                         VerticalContentAlignment="Center"
                         CharacterCasing="Upper"
@@ -62,15 +70,18 @@
                 </Border>
             </Grid>
             <Grid Grid.Column="2">
-                <Label
-                    Content="Nome:"
-                    FontFamily="Cidade"
-                    FontSize="12"
-                    FontWeight="Medium"
-                    Foreground="White" />
-                <Border Height="20" Margin="5">
+                <Border Margin="5" VerticalAlignment="Top">
+                    <Label
+                        Content="Cidade:"
+                        FontFamily="Roboto"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        Foreground="White" />
+                </Border>
+                <Border Margin="5,0,5,0" VerticalAlignment="Center">
                     <TextBox
                         x:Name="txtCidade"
+                        Height="25"
                         HorizontalContentAlignment="Left"
                         VerticalContentAlignment="Center"
                         CharacterCasing="Upper"
@@ -78,30 +89,40 @@
                 </Border>
             </Grid>
             <Grid Grid.Column="3">
-                <Label
-                    Content="Estado:"
-                    FontFamily="Roboto"
-                    FontSize="12"
-                    FontWeight="Medium"
-                    Foreground="White" />
+                <Border Margin="5" VerticalAlignment="Top">
+                    <Label
+                        Content="Estado:"
+                        FontFamily="Roboto"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        Foreground="White" />
+                </Border>
                 <Border
-                    Height="20"
-                    Margin="5"
+                    Margin="5,0,5,0"
+                    VerticalAlignment="Center"
                     Background="White"
-                    CornerRadius="8">
-                    <ComboBox x:Name="cmbEstado" Style="{StaticResource ComboArredondado}" />
+                    CornerRadius="6">
+                    <StackPanel Orientation="Vertical">
+                        <ComboBox
+                            x:Name="cmbEstado"
+                            Height="25"
+                            Style="{StaticResource ComboArredondado}" />
+                    </StackPanel>
                 </Border>
             </Grid>
             <Grid Grid.Column="4">
-                <Label
-                    Content="CEP:"
-                    FontFamily="Roboto"
-                    FontSize="12"
-                    FontWeight="Medium"
-                    Foreground="White" />
-                <Border Height="20">
+                <Border Margin="5" VerticalAlignment="Top">
+                    <Label
+                        Content="CEP:"
+                        FontFamily="Roboto"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        Foreground="White" />
+                </Border>
+                <Border Margin="5,0,5,0" VerticalAlignment="Center">
                     <TextBox
                         x:Name="txtCep"
+                        Height="25"
                         HorizontalContentAlignment="Left"
                         VerticalContentAlignment="Center"
                         Style="{StaticResource TextArredondado}" />
