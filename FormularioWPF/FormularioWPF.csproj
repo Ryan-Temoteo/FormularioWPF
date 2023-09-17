@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="6.2.9" />
     <PackageReference Include="Npgsql" Version="7.0.4" />
   </ItemGroup>
 

@@ -10,6 +10,7 @@
     Height="550"
     Loaded="Window_Loaded"
     Style="{StaticResource PropriedadesTela}"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid Margin="10">
 
@@ -171,6 +172,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
@@ -180,6 +182,7 @@
                             x:Name="btnGravar"
                             Click="btnGravar_Click"
                             Content="Gravar"
+                            FontFamily="Roboto"
                             Style="{StaticResource BtnChamado}" />
                     </StackPanel>
                 </Border>
@@ -191,10 +194,22 @@
                             x:Name="btnExcluir"
                             Click="btnExcluir_Click"
                             Content="Excluir"
+                            FontFamily="Roboto"
                             Style="{StaticResource BtnChamado}" />
                     </StackPanel>
                 </Border>
-
+            </Grid>
+            <Grid Grid.Column="2">
+                <Border Width="100" VerticalAlignment="Center">
+                    <StackPanel Orientation="Vertical">
+                        <Button
+                            x:Name="btnExcel"
+                            Click="btnExcel_Click"
+                            Content="Exportar Excel"
+                            FontFamily="Roboto"
+                            Style="{StaticResource BtnChamado}" />
+                    </StackPanel>
+                </Border>
             </Grid>
         </Grid>
     </Grid>

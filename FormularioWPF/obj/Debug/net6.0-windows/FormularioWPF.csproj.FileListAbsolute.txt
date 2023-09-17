@@ -23,3 +23,17 @@ C:\Users\User\source\repos\FormularioWPF\FormularioWPF\obj\Debug\net6.0-windows\
 C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Npgsql.dll
 C:\Users\User\source\repos\FormularioWPF\FormularioWPF\obj\Debug\net6.0-windows\FormularioWPF.csproj.CopyComplete
+C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\EPPlus.dll
+C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\EPPlus.Interfaces.dll
+C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\EPPlus.System.Drawing.dll
+C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\User\source\repos\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll

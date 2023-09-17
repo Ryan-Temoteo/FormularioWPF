@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Data;
+﻿using OfficeOpenXml;
 using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
+using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace FormularioWPF
 {
@@ -33,13 +37,10 @@ namespace FormularioWPF
         {
             try
             {
-                // Chame o método da classe DAL para obter os dados da tabela "tbl_endereco".
                 DataTable dtEnderecos = obj.RetornaTabela("SELECT * FROM tbl_endereco");
 
-                // Crie uma lista de objetos "Endereco" para armazenar os dados convertidos.
                 List<Endereco> enderecos = new List<Endereco>();
 
-                // Percorra os dados da tabela e converta para objetos "Endereco".
                 foreach (DataRow row in dtEnderecos.Rows)
                 {
                     Endereco endereco = new Endereco
@@ -50,14 +51,11 @@ namespace FormularioWPF
                         Estado = row["estado"].ToString(),
                         CEP = row["cep"].ToString(),
                         Nome = row["nome"].ToString()
-                        // Faça a conversão para outras propriedades, se houver.
                     };
 
-                    // Adicione o objeto "Endereco" à lista.
                     enderecos.Add(endereco);
                 }
 
-                // Preencher o DataGrid com a lista de objetos "Endereco".
                 dgEndereco.ItemsSource = enderecos;
             }
             catch (Exception ex)
@@ -72,10 +70,8 @@ namespace FormularioWPF
 
             try
             {
-                // Chame o método ExcluirEndereco para excluir o endereço.
                 obj.ExcluirEndereco(id);
 
-                // Atualizar o DataGrid após a exclusão.
                 PreencheDataGrid();
             }
             catch (Exception ex)
@@ -92,9 +88,8 @@ namespace FormularioWPF
             string estado = cmbEstado.SelectedItem.ToString();
             string cep = txtCep.Text;
 
-            // Se estiver editando um registro existente, forneça o ID do endereço.
-            // Caso contrário, passe null para que o método saiba que é uma inserção.
-            int? id = null; // Substitua por um valor válido do ID, se necessário.
+            
+            int? id = null;
 
             DAL dal = new DAL();
 
@@ -121,7 +116,6 @@ namespace FormularioWPF
                     parametros.Add("@Id", id);
                 }
 
-                // Chame o método ComandoSql para executar a gravação.
                 obj.ComandoSql(query, parametros);
 
                 // Atualizar o DataGrid após a gravação.
@@ -139,7 +133,6 @@ namespace FormularioWPF
             {
                 int idEnderecoSelecionado = enderecoSelecionado.Id;
 
-                // Realizar a exclusão do endereço com o ID obtido.
                 Excluir(idEnderecoSelecionado);
             }
         }
@@ -151,12 +144,10 @@ namespace FormularioWPF
 
         private void btnExcluir_Click(object sender, RoutedEventArgs e)
         {
-            // Verificar se algum item foi selecionado no DataGrid.
             if (dgEndereco.SelectedItem != null && dgEndereco.SelectedItem is Endereco enderecoSelecionado)
             {
                 int idEnderecoSelecionado = enderecoSelecionado.Id;
 
-                // Realizar a exclusão do endereço com o ID obtido.
                 Excluir(idEnderecoSelecionado);
             }
         }
@@ -175,6 +166,79 @@ namespace FormularioWPF
             {
                 cmbEstado.Items.Add(estado);
             }
+        }
+
+        private void btnExcel_Click(object sender, RoutedEventArgs e)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            using (ExcelPackage package = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Planilha1");
+
+                DataTable dt = new DataTable();
+                foreach (var column in dgEndereco.Columns)
+                {
+                    dt.Columns.Add(column.Header.ToString());
+                }
+
+                foreach (var item in dgEndereco.Items)
+                {
+                    DataRow row = dt.NewRow();
+                    foreach (var column in dgEndereco.Columns)
+                    {
+                        var binding = (column as DataGridTextColumn).Binding as System.Windows.Data.Binding;
+                        var col = binding.Path.Path;
+                        row[col] = GetProperty(item, col);
+                    }
+                    dt.Rows.Add(row);
+                }
+
+                worksheet.Cells["A1"].LoadFromDataTable(dt, true);
+
+                string caminho_do_arquivo = "Planilha1.xlsx";
+                File.WriteAllBytes(caminho_do_arquivo, package.GetAsByteArray());
+
+                string excelPath = FindExcelExecutablePath();
+
+                if (!string.IsNullOrEmpty(excelPath))
+                {
+                    Process.Start(excelPath, caminho_do_arquivo);
+                }
+                else
+                {
+                    MessageBox.Show("O Excel não foi encontrado no sistema.");
+                }
+
+                MessageBox.Show("Dados exportados para o Excel com sucesso!");
+            }
+        }
+
+
+        private string FindExcelExecutablePath()
+        {
+            // Tentar encontrar o caminho do executável do Excel no registro do sistema
+            string excelPath = null;
+
+            using (Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\excel.exe"))
+            {
+                if (key != null)
+                {
+                    object value = key.GetValue("");
+                    if (value != null)
+                    {
+                        excelPath = value.ToString();
+                    }
+                }
+            }
+
+            return excelPath;
+        }
+
+
+        private object GetProperty(object obj, string propName)
+        {
+            return obj.GetType().GetProperty(propName).GetValue(obj, null);
         }
     }
 }
