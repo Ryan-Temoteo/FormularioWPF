@@ -25,13 +25,18 @@ namespace FormularioWPF
         public class Endereco
         {
             public int Id { get; set; }
-            public string Rua { get; set; }
-            public string Cidade { get; set; }
-            public string Estado { get; set; }
-            public string CEP { get; set; }
-            public string Nome { get; set; }
+            public string? Rua { get; set; }
+            public string? Cidade { get; set; }
+            public string? Estado { get; set; }
+            public string? CEP { get; set; }
+            public string? Nome { get; set; }
         }
 
+
+        private void Teste()
+        {
+            Console.WriteLine("");
+        }
 
         private void PreencheDataGrid()
         {
