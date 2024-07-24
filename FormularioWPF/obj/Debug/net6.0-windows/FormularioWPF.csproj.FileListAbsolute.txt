@@ -85,3 +85,14 @@ C:\Users\ryant\Desktop\FormularioWPF\FormularioWPF\obj\Debug\net6.0-windows\refi
 C:\Users\ryant\Desktop\FormularioWPF\FormularioWPF\obj\Debug\net6.0-windows\FormularioWPF.pdb
 C:\Users\ryant\Desktop\FormularioWPF\FormularioWPF\obj\Debug\net6.0-windows\FormularioWPF.genruntimeconfig.cache
 C:\Users\ryant\Desktop\FormularioWPF\FormularioWPF\obj\Debug\net6.0-windows\ref\FormularioWPF.dll
+C:\Users\ryant\Desktop\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Humanizer.dll
+C:\Users\ryant\Desktop\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\ryant\Desktop\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\ryant\Desktop\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\ryant\Desktop\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\ryant\Desktop\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\ryant\Desktop\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ryant\Desktop\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ryant\Desktop\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\ryant\Desktop\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\ryant\Desktop\FormularioWPF\FormularioWPF\bin\Debug\net6.0-windows\Npgsql.EntityFrameworkCore.PostgreSQL.dll

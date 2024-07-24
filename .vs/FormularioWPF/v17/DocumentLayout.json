@@ -1,28 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\ryant\\Desktop\\FormularioWPF\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{2FF6EB03-59FB-4693-A7CC-40B0B97BD960}|FormularioWPF\\FormularioWPF.csproj|c:\\users\\ryant\\desktop\\formulariowpf\\formulariowpf\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{2FF6EB03-59FB-4693-A7CC-40B0B97BD960}|FormularioWPF\\FormularioWPF.csproj|solutionrelative:formulariowpf\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FF6EB03-59FB-4693-A7CC-40B0B97BD960}|FormularioWPF\\FormularioWPF.csproj|c:\\users\\ryant\\desktop\\formulariowpf\\formulariowpf\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{2FF6EB03-59FB-4693-A7CC-40B0B97BD960}|FormularioWPF\\FormularioWPF.csproj|solutionrelative:formulariowpf\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FF6EB03-59FB-4693-A7CC-40B0B97BD960}|FormularioWPF\\FormularioWPF.csproj|c:\\users\\ryant\\desktop\\formulariowpf\\formulariowpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{2FF6EB03-59FB-4693-A7CC-40B0B97BD960}|FormularioWPF\\FormularioWPF.csproj|solutionrelative:formulariowpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FF6EB03-59FB-4693-A7CC-40B0B97BD960}|FormularioWPF\\FormularioWPF.csproj|c:\\users\\ryant\\desktop\\formulariowpf\\formulariowpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{2FF6EB03-59FB-4693-A7CC-40B0B97BD960}|FormularioWPF\\FormularioWPF.csproj|solutionrelative:formulariowpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FF6EB03-59FB-4693-A7CC-40B0B97BD960}|FormularioWPF\\FormularioWPF.csproj|c:\\users\\ryant\\desktop\\formulariowpf\\formulariowpf\\dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FF6EB03-59FB-4693-A7CC-40B0B97BD960}|FormularioWPF\\FormularioWPF.csproj|solutionrelative:formulariowpf\\dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -30,74 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\ryant\\Desktop\\FormularioWPF\\FormularioWPF\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "FormularioWPF\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\ryant\\Desktop\\FormularioWPF\\FormularioWPF\\MainWindow.xaml",
-              "RelativeToolTip": "FormularioWPF\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-05T00:42:43.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\ryant\\Desktop\\FormularioWPF\\FormularioWPF\\App.xaml",
-              "RelativeDocumentMoniker": "FormularioWPF\\App.xaml",
-              "ToolTip": "C:\\Users\\ryant\\Desktop\\FormularioWPF\\FormularioWPF\\App.xaml",
-              "RelativeToolTip": "FormularioWPF\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-05T00:42:43.36Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\ryant\\Desktop\\FormularioWPF\\FormularioWPF\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "FormularioWPF\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\ryant\\Desktop\\FormularioWPF\\FormularioWPF\\MainWindow.xaml",
-              "RelativeToolTip": "FormularioWPF\\MainWindow.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-05T00:42:43.362Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DAL.cs",
-              "DocumentMoniker": "C:\\Users\\ryant\\Desktop\\FormularioWPF\\FormularioWPF\\DAL.cs",
-              "RelativeDocumentMoniker": "FormularioWPF\\DAL.cs",
-              "ToolTip": "C:\\Users\\ryant\\Desktop\\FormularioWPF\\FormularioWPF\\DAL.cs",
-              "RelativeToolTip": "FormularioWPF\\DAL.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAASwBYAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T00:42:43.364Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ryant\\Desktop\\FormularioWPF\\FormularioWPF\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "FormularioWPF\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\ryant\\Desktop\\FormularioWPF\\FormularioWPF\\MainWindow.xaml.cs",
-              "RelativeToolTip": "FormularioWPF\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAxwBMAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T00:42:43.366Z",
-              "EditorCaption": ""
             }
           ]
         }

@@ -1,9 +1,9 @@
-﻿using OfficeOpenXml;
-using System;
-using System.Collections.Generic;
+﻿using FormularioWPF.Models;
+using OfficeOpenXml;
 using System.Data;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -14,131 +14,36 @@ namespace FormularioWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ConnDbContext _dbconn;
+
         public MainWindow()
         {
             InitializeComponent();
-            PreencheDataGrid();
-        }
-
-        DAL obj = new DAL();
-
-        public class Endereco
-        {
-            public int Id { get; set; }
-            public string? Rua { get; set; }
-            public string? Cidade { get; set; }
-            public string? Estado { get; set; }
-            public string? CEP { get; set; }
-            public string? Nome { get; set; }
-        }
-
-
-        private void Teste()
-        {
-            Console.WriteLine("");
-        }
-
-        private void PreencheDataGrid()
-        {
-            try
-            {
-                DataTable dtEnderecos = obj.RetornaTabela("SELECT * FROM tbl_endereco");
-
-                List<Endereco> enderecos = new List<Endereco>();
-
-                foreach (DataRow row in dtEnderecos.Rows)
-                {
-                    Endereco endereco = new Endereco
-                    {
-                        Id = Convert.ToInt32(row["Id"]),
-                        Rua = row["rua"].ToString(),
-                        Cidade = row["cidade"].ToString(),
-                        Estado = row["estado"].ToString(),
-                        CEP = row["cep"].ToString(),
-                        Nome = row["nome"].ToString()
-                    };
-
-                    enderecos.Add(endereco);
-                }
-
-                dgEndereco.ItemsSource = enderecos;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao carregar os dados: " + ex.Message);
-            }
-        }
-
-        private void Excluir(int id)
-        {
-            
-
-            try
-            {
-                obj.ExcluirEndereco(id);
-
-                PreencheDataGrid();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao excluir o endereço: " + ex.Message);
-            }
+            _dbconn = new ConnDbContext();
+            dgEndereco.ItemsSource = _dbconn.clientes.ToList();
         }
 
         private void Gravar()
         {
-            string nome = txtNome.Text;
-            string rua = txtRua.Text;
-            string cidade = txtCidade.Text;
-            string estado = cmbEstado.SelectedItem.ToString();
-            string cep = txtCep.Text;
-
-            
-            int? id = null;
-
-            DAL dal = new DAL();
-
-            try
+            if (!string.IsNullOrEmpty(txtNome.Text) &&
+                !string.IsNullOrEmpty(txtCidade.Text) &&
+                !string.IsNullOrEmpty(txtCep.Text) && !string.IsNullOrEmpty(txtRua.Text))
             {
-                string query;
-                Dictionary<string, object> parametros = new Dictionary<string, object>
+
+                var campos = new Endereco
                 {
-                    { "@Nome", nome },
-                    { "@Rua", rua },
-                    { "@Cidade", cidade },
-                    { "@Estado", estado },
-                    { "@CEP", cep }
+                    Nome = txtNome.Text,
+                    Cidade = txtCidade.Text,
+                    CEP = txtCep.Text,
+                    Rua = txtRua.Text,
                 };
-
-                // Verificar se é uma inserção ou atualização.
-                if (id == null)
-                {
-                    query = "INSERT INTO tbl_endereco (Nome, Rua, Cidade, Estado, CEP) VALUES (@Nome, @Rua, @Cidade, @Estado, @CEP)";
-                }
-                else
-                {
-                    query = "UPDATE tbl_endereco SET Nome = @Nome, Rua = @Rua, Cidade = @Cidade, Estado = @Estado, CEP = @CEP WHERE Id = @Id";
-                    parametros.Add("@Id", id);
-                }
-
-                obj.ComandoSql(query, parametros);
-
-                // Atualizar o DataGrid após a gravação.
-                PreencheDataGrid();
+                _dbconn.clientes.Add(campos);
+                _dbconn.SaveChanges();
+                dgEndereco.ItemsSource = _dbconn.clientes.ToList();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Erro ao gravar o endereço: " + ex.Message);
-            }
-        }
-
-        private void dgEndereco_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            if (dgEndereco.SelectedItem != null && dgEndereco.SelectedItem is Endereco enderecoSelecionado)
-            {
-                int idEnderecoSelecionado = enderecoSelecionado.Id;
-
-                Excluir(idEnderecoSelecionado);
+                MessageBox.Show("Abasteça os campos corretamente");
             }
         }
 
@@ -151,9 +56,20 @@ namespace FormularioWPF
         {
             if (dgEndereco.SelectedItem != null && dgEndereco.SelectedItem is Endereco enderecoSelecionado)
             {
-                int idEnderecoSelecionado = enderecoSelecionado.Id;
+                int idEnderecoSelecionado = (int)enderecoSelecionado.Id;
 
-                Excluir(idEnderecoSelecionado);
+                // Buscar a entidade completa no banco de dados
+                var enderecoParaRemover = _dbconn.clientes.Find(idEnderecoSelecionado);
+
+                if (enderecoParaRemover != null)
+                {
+                    // Remover a entidade do contexto
+                    _dbconn.Remove(enderecoParaRemover);
+                    _dbconn.SaveChanges();
+
+                    // Atualizar a fonte de dados do DataGrid
+                    dgEndereco.ItemsSource = _dbconn.clientes.ToList();
+                }
             }
         }
 
